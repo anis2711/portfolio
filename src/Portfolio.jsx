@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Lock, Server, Cloud, Terminal, GitBranch, Database, Network, Zap, Eye, Code, Award } from 'lucide-react';
 
 const Portfolio = () => {
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState('accueil');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -14,6 +14,22 @@ const Portfolio = () => {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  // Fonction pour faire défiler vers une section
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offset = 80; // Hauteur de la navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+      setActiveSection(sectionId);
+    }
+  };
 
   const skills = [
     { name: 'Sécurité Réseau', icon: Shield, level: 95, color: 'from-cyan-500 to-blue-600' },
@@ -94,14 +110,24 @@ const Portfolio = () => {
               </span>
             </div>
             <div className="flex space-x-6">
-              {['Accueil', 'Compétences', 'Projets', 'Certifications', 'Contact'].map((item) => (
+              {[
+                { label: 'Accueil', id: 'accueil' },
+                { label: 'Compétences', id: 'competences' },
+                { label: 'Projets', id: 'projets' },
+                { label: 'Certifications', id: 'certifications' },
+                { label: 'Contact', id: 'contact' }
+              ].map((item) => (
                 <button
-                  key={item}
-                  onClick={() => setActiveSection(item.toLowerCase())}
-                  className="relative px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 group"
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`relative px-3 py-2 text-sm font-medium transition-all hover:text-cyan-400 group ${
+                    activeSection === item.id ? 'text-cyan-400' : ''
+                  }`}
                 >
-                  {item}
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-cyan-400 transition-all group-hover:w-full"></span>
+                  {item.label}
+                  <span className={`absolute bottom-0 left-0 h-0.5 bg-cyan-400 transition-all ${
+                    activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
+                  }`}></span>
                 </button>
               ))}
             </div>
@@ -111,7 +137,7 @@ const Portfolio = () => {
 
       <div className="relative z-20 pt-20">
         {/* Hero Section */}
-        <section className={`min-h-screen flex items-center justify-center px-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <section id="accueil" className={`min-h-screen flex items-center justify-center px-6 transition-all duration-1000 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="max-w-6xl mx-auto text-center">
             <div className="mb-8 flex justify-center">
               <div className="relative">
@@ -150,10 +176,16 @@ const Portfolio = () => {
             </div>
 
             <div className="flex justify-center space-x-4">
-              <button className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all transform hover:scale-105">
+              <button 
+                onClick={() => scrollToSection('projets')}
+                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all transform hover:scale-105"
+              >
                 Voir mes projets
               </button>
-              <button className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all"
+              >
                 Me contacter
               </button>
             </div>
@@ -161,7 +193,7 @@ const Portfolio = () => {
         </section>
 
         {/* Skills Section */}
-        <section className="py-20 px-6">
+        <section id="competences" className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -194,7 +226,7 @@ const Portfolio = () => {
         </section>
 
         {/* Projects Section */}
-        <section className="py-20 px-6 bg-slate-900/50">
+        <section id="projets" className="py-20 px-6 bg-slate-900/50">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -228,7 +260,7 @@ const Portfolio = () => {
         </section>
 
         {/* Certifications Section */}
-        <section className="py-20 px-6">
+        <section id="certifications" className="py-20 px-6">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold mb-12 text-center">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
@@ -250,7 +282,7 @@ const Portfolio = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 px-6 bg-slate-900/50">
+        <section id="contact" className="py-20 px-6 bg-slate-900/50">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
