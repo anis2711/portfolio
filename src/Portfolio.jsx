@@ -310,8 +310,8 @@ Résultats :
             </h1>
             
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Expert en sécurité cloud, DevSecOps et architecture réseau. 
-              Spécialisé dans la conception et la gestion d'infrastructures hautement sécurisées.
+              Administrateur Infrastructures Sécurisées, je mets mes compétences au service de la conception, de l’administration et de la sécurisation d’environnements systèmes et réseaux.
+Actuellement en recherche d’une alternance, je souhaite évoluer au sein d’une structure où la sécurité, la continuité de service et l’optimisation des infrastructures sont au cœur des priorités.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
