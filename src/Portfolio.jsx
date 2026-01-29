@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Lock, Server, Cloud, Terminal, GitBranch, Database, Network, Zap, Eye, Code, Award, X, FileText, Image as ImageIcon, Download, ExternalLink } from 'lucide-react';
+// Version actuelle (automatique)
+//import AnimatedBackground from './AnimatedBackground';
 
+// Version avec sélecteur (décommentez celle-ci et commentez l'autre)
+import AnimatedBackground from './AnimatedBackgroundWithSelector';
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('accueil');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -228,18 +232,9 @@ Résultats :
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100 overflow-hidden">
-      {/* Animated Background Grid */}
-      <div className="fixed inset-0 opacity-20">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `
-            linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          animation: 'gridMove 20s linear infinite'
-        }}></div>
-      </div>
+  <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-gray-100 overflow-hidden">
+    {/* Animated Background - Change toutes les 5 secondes */}
+    <AnimatedBackground />
 
       {/* Cursor Glow Effect */}
       <div 
@@ -310,7 +305,7 @@ Résultats :
             </h1>
             
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Administrateur Infrastructures Sécurisées, je mets mes compétences au service de la conception, de l’administration et de la sécurisation d’environnements systèmes et réseaux.
+              Bonjour, je suis Anis, Administrateur Infrastructures Sécurisées, je mets mes compétences au service de la conception, de l’administration et de la sécurisation d’environnements systèmes et réseaux.
 Actuellement en recherche d’une alternance, je souhaite évoluer au sein d’une structure où la sécurité, la continuité de service et l’optimisation des infrastructures sont au cœur des priorités.
             </p>
 
@@ -458,10 +453,10 @@ Actuellement en recherche d’une alternance, je souhaite évoluer au sein d’u
               <a href="mailto:contact@secureinfra.dev" className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all transform hover:scale-105">
                 Email
               </a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
+              <a href="https://www.linkedin.com/in/anis-saad2711/" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
                 LinkedIn
               </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
+              <a href="https://github.com/anis2711" target="_blank" rel="noopener noreferrer" className="px-8 py-3 border border-cyan-500 rounded-lg font-semibold hover:bg-cyan-500/10 transition-all">
                 GitHub
               </a>
             </div>
@@ -654,18 +649,14 @@ Actuellement en recherche d’une alternance, je souhaite évoluer au sein d’u
       )}
 
       <style jsx>{`
-        @keyframes gridMove {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(50px); }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.2s ease-out;
-        }
-      `}</style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .animate-fadeIn {
+    animation: fadeIn 0.2s ease-out;
+  }
+`}</style>
     </div>
   );
 };
