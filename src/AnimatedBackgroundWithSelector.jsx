@@ -14,15 +14,23 @@ const AnimatedBackgroundWithSelector = () => {
   }, [autoPlay]);
 
   const backgrounds = [
-    // 1. Grille Matrix animée
+    // 1. Grille Matrix animée - Plus visible
     {
       name: "Grille Matrix",
       component: (
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-40">
           <div className="absolute inset-0" style={{
             backgroundImage: `
-              linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)
+              linear-gradient(rgba(6, 182, 212, 0.3) 2px, transparent 2px),
+              linear-gradient(90deg, rgba(6, 182, 212, 0.3) 2px, transparent 2px)
+            `,
+            backgroundSize: '50px 50px',
+            animation: 'gridMove 20s linear infinite'
+          }}></div>
+          {/* Points lumineux aux intersections */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: `
+              radial-gradient(circle at 0 0, rgba(6, 182, 212, 0.4) 2px, transparent 2px)
             `,
             backgroundSize: '50px 50px',
             animation: 'gridMove 20s linear infinite'
