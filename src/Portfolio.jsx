@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Lock, Server, Cloud, Terminal, GitBranch, Database, Network, Zap, Eye, Code, Award, X, FileText, Image as ImageIcon, Download, ExternalLink } from 'lucide-react';
 // Version actuelle (automatique)
-//import AnimatedBackground from './AnimatedBackground';
+import AnimatedBackground from './AnimatedBackground';
 
 // Version avec sélecteur (décommentez celle-ci et commentez l'autre)
-import AnimatedBackground from './AnimatedBackgroundWithSelector';
+//import AnimatedBackground from './AnimatedBackgroundWithSelector';
 const Portfolio = () => {
   const [activeSection, setActiveSection] = useState('accueil');
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
