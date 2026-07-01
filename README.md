@@ -139,11 +139,3 @@ Le portfolio est entièrement responsive et s'adapte à tous les types d'écrans
 ## 📄 License
 
 Ce projet est libre d'utilisation pour votre portfolio personnel.
-
-## 🤝 Support
-
-Pour toute question ou problème, n'hésitez pas à ouvrir une issue sur GitHub.
-
----
-
-**Développé avec ❤️ pour les professionnels de la cybersécurité**
