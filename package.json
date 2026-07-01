@@ -1,7 +1,7 @@
 {
   "name": "portfolio-admin-infra-securisee",
   "version": "1.0.0",
-  "description": "Portfolio professionnel pour Administrateur d'infrastructures sécurisées",
+  "description": "Portfolio professionnel pour Administrateur Cloud",
   "private": true,
   "scripts": {
     "dev": "vite",
