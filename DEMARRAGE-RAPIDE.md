@@ -179,11 +179,3 @@ Si vous rencontrez des problèmes :
 2. Vérifiez les logs dans le terminal
 3. Cherchez l'erreur sur Google
 4. Consultez la documentation officielle
-
----
-
-**🎉 Félicitations ! Votre portfolio est prêt à être déployé !**
-
-N'oubliez pas de personnaliser toutes les informations avant le déploiement.
-
-Bon succès avec votre portfolio ! 🚀
