@@ -298,16 +298,14 @@ Résultats :
             
             <h1 className="text-6xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
-                Administrateur
+                ADMINISTRATEUR
               </span>
               <br />
-              <span className="text-white">Infrastructures Sécurisées</span>
+              <span className="text-white">CLOUD</span>
             </h1>
             
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-              Bonjour, je suis Anis, Administrateur Infrastructures Sécurisées, je mets mes compétences au service de la conception, de l’administration et de la sécurisation d’environnements systèmes et réseaux.
-Actuellement en recherche d’une alternance, je souhaite évoluer au sein d’une structure où la sécurité, la continuité de service et l’optimisation des infrastructures sont au cœur des priorités.
-            </p>
+              Bonjour, je suis Anis, Administrateur Cloud Junior, je déploie, administre et sécurise des environnements cloud modernes. Je maîtrise les bases d’AWS, la gestion des ressources, l’automatisation et le monitoring. Motivé, rigoureux et orienté fiabilité, je contribue à optimiser les infrastructures et à garantir la continuité de service.</p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {[
